@@ -1,2 +1,2 @@
-powershell -command "& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Verbose; powershell -NoExit -Command { & 'G:\My Drive\Code\CCC-Powershell\fixWindows.ps1'}}"
+powershell -command "& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Verbose; powershell -NoExit -Command { & 'C:\CCC-Powershell\fixWindows.ps1'}}"
 @REM powershell -command "& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Verbose; powershell -NoExit -Command { & C:\CCC-Powershell\fixWindows.ps1}}"
