@@ -3,7 +3,12 @@ $timestamp = Get-Date -Format "dd-MM-yyyy-hh-mm-ss"
 Start-Transcript -Path "C:\CCC-Powershell\fixWindows\fixWindows-$timeStamp"
 
 #stop update service
-Get-Service -Name "Windows Update" | Set-Service -Status Stopped  -Verbose
+try {
+    Get-Service -Name "Windows Update" | Set-Service -Status Stopped  -Verbose
+}
+catch {
+    Write-Host -ForegroundColor Yellow "Failed to stop windows update service, likely as its being used currently. This is non-critical to overall functionality as service will still not start on startup"
+}
 
 #disable stop it from starting again
 Write-Host "Setting Start key in HKLM:\SYSTEM\CurrentControlSet\Services\wuauserv too 4 to disable update service boot"
